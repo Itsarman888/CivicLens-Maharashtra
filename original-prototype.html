@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123c35">
+<title>CivicLens Maharashtra — Community civic reports</title>
+<style>
+:root{--ink:#152b27;--muted:#657873;--green:#176b55;--green2:#dff3e9;--lime:#d6f36a;--paper:#f6f8f4;--card:#fff;--line:#e1e8e2;--orange:#f4a261;--red:#d75d4c;--shadow:0 12px 34px rgba(19,49,40,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:1180px;margin:auto;padding:0 22px}.topbar{background:#123c35;color:white;position:sticky;top:0;z-index:5;box-shadow:0 3px 15px #123c351c}.nav{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:16px}.brand{display:flex;align-items:center;gap:11px;color:white;text-decoration:none;font-weight:850;font-size:21px;letter-spacing:-.5px}.logo{width:38px;height:38px;border-radius:12px;background:var(--lime);display:grid;place-items:center;color:#123c35;font-size:20px}.navright{display:flex;gap:10px;align-items:center}.navlink{color:#d8e8e2;text-decoration:none;padding:10px 12px;border-radius:10px}.navlink:hover{background:#ffffff12}.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:750;transition:.15s}.btn:hover{transform:translateY(-1px)}.primary{background:var(--lime);color:#16372f}.darkbtn{background:var(--green);color:white}.outline{border:1px solid var(--line);background:white;color:var(--ink)}.small{padding:8px 11px;font-size:13px}.hero{background:#123c35;color:white;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:440px;height:440px;border:1px solid #ffffff20;border-radius:50%;right:-100px;top:-210px;box-shadow:0 0 0 55px #ffffff08,0 0 0 110px #ffffff06}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:58px 0 64px;position:relative;z-index:1}.eyebrow{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;font-weight:800;color:#d6f36a}.hero h1{font-size:clamp(38px,5vw,64px);line-height:1.04;letter-spacing:-2.5px;margin:15px 0 18px;max-width:670px}.hero p{font-size:17px;color:#d4e3dd;max-width:570px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.hero .secondary{border:1px solid #ffffff45;background:#ffffff0c;color:white}.hero-note{font-size:12px;color:#b5cec5;margin-top:17px}.visual{min-height:315px;border:1px solid #ffffff28;border-radius:26px;background:linear-gradient(145deg,#ffffff16,#ffffff06);padding:20px;position:relative;backdrop-filter:blur(6px)}.mapfake{height:210px;border-radius:17px;background-color:#e9f0df;background-image:linear-gradient(32deg,transparent 45%,#c5d9c5 46%,#c5d9c5 49%,transparent 50%),linear-gradient(115deg,transparent 45%,#c5d9c5 46%,#c5d9c5 49%,transparent 50%),linear-gradient(0deg,transparent 48%,#fff 49%,#fff 53%,transparent 54%);background-size:160px 130px,180px 170px,100% 58px;position:relative;overflow:hidden}.pin{position:absolute;width:33px;height:33px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#176b55;border:3px solid white;box-shadow:0 4px 9px #0002}.pin:after{content:"";position:absolute;width:9px;height:9px;background:white;border-radius:50%;top:9px;left:9px}.pin.p1{left:25%;top:25%}.pin.p2{left:61%;top:53%;background:#e58a49}.pin.p3{left:77%;top:16%;background:#c65348}.floatcard{background:white;color:var(--ink);padding:13px 15px;border-radius:14px;box-shadow:var(--shadow);display:flex;align-items:center;gap:10px}.floatcard strong{display:block;font-size:13px}.floatcard small{color:var(--muted)}.floatcard.bottom{position:absolute;bottom:13px;left:34px;right:34px}.miniicon{width:34px;height:34px;display:grid;place-items:center;background:var(--green2);border-radius:10px}.section{padding:42px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:22px}.section h2{font-size:27px;letter-spacing:-.7px;margin:0 0 6px}.sub{color:var(--muted);margin:0}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-24px;position:relative;z-index:2}.stat{background:white;border:1px solid var(--line);border-radius:17px;padding:19px;box-shadow:var(--shadow)}.stat .num{font-size:29px;font-weight:850;letter-spacing:-1px}.stat .label{font-size:13px;color:var(--muted)}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:17px}.field{border:1px solid var(--line);background:white;border-radius:11px;padding:11px 13px;outline:none;color:var(--ink);min-width:0}.field:focus{border-color:#4b9a7c;box-shadow:0 0 0 3px #176b5515}.search{flex:1;min-width:190px}.report-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.report{background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:0 5px 18px #173c3210}.report-image{height:145px;background:linear-gradient(135deg,#dce9dd,#eff3e7);display:grid;place-items:center;font-size:45px;position:relative}.report-image img{width:100%;height:100%;object-fit:cover}.status{position:absolute;top:12px;left:12px;background:#fff;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:800;box-shadow:0 2px 7px #0001}.status.review{color:#9a5b12}.status.progress{color:#176b55}.status.resolved{color:#416c56}.report-content{padding:16px;display:flex;flex-direction:column;flex:1}.cat{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--green);font-weight:850}.report h3{margin:6px 0;font-size:17px;line-height:1.25}.report p{margin:0;color:var(--muted);font-size:13px}.meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px;font-size:12px;color:var(--muted)}.report-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid #eef1ed;margin-top:15px;padding-top:12px}.support{border:1px solid var(--line);background:white;border-radius:10px;padding:8px 10px;font-weight:750;font-size:12px}.support.on{background:var(--green2);border-color:#b7dfcb;color:var(--green)}.textbtn{border:0;background:transparent;color:var(--green);font-weight:800;padding:8px}.empty{grid-column:1/-1;border:1px dashed #cbd8ce;border-radius:16px;padding:35px;text-align:center;color:var(--muted)}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.info-card{background:white;border:1px solid var(--line);border-radius:18px;padding:22px}.info-card h3{margin:0 0 8px}.steps{display:grid;gap:14px}.step{display:flex;gap:12px}.stepnum{flex:none;width:32px;height:32px;border-radius:10px;background:var(--green2);color:var(--green);display:grid;place-items:center;font-weight:850}.footer{background:#123c35;color:#d4e3dd;padding:28px 0;margin-top:25px}.footerinner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.footer small{color:#9bb8ad}.notice{border-radius:12px;background:#fff8e9;border:1px solid #f2dfb6;color:#795521;padding:12px 14px;font-size:13px;margin:18px 0}.pill{display:inline-flex;background:#e9f3ed;color:#27644f;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:800}.modal-backdrop{position:fixed;inset:0;background:#0b211dcc;z-index:20;display:none;align-items:center;justify-content:center;padding:18px}.modal-backdrop.open{display:flex}.modal{background:white;border-radius:22px;max-width:650px;width:100%;max-height:92vh;overflow:auto;padding:24px;box-shadow:0 20px 70px #0004}.modalhead{display:flex;justify-content:space-between;align-items:center;gap:15px}.modal h2{margin:0}.close{border:0;background:#f0f4ef;border-radius:10px;width:38px;height:38px;font-size:22px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:18px}.formgroup{display:flex;flex-direction:column;gap:6px}.formgroup.full{grid-column:1/-1}.formgroup label{font-size:12px;font-weight:800;color:#4e625b}.formgroup textarea{min-height:90px;resize:vertical}.helper{font-size:11px;color:var(--muted)}.modalfoot{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,120px);background:#173d33;color:white;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow);z-index:40;transition:.25s;max-width:calc(100% - 30px)}.toast.show{transform:translate(-50%,0)}.hide{display:none!important}.adminpanel{background:#edf7f0;border:1px solid #c8e4d2;border-radius:16px;padding:17px;margin-bottom:18px}.adminpanel h3{margin:0 0 7px}.adminrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}.adminrow select{max-width:210px}.commentlist{display:grid;gap:8px;margin-top:13px}.comment{padding:10px 12px;background:#f4f7f2;border-radius:10px;font-size:13px}.comment strong{font-size:12px}.commentform{display:flex;gap:7px;margin-top:10px}.commentform input{flex:1}.detailbody{color:var(--muted);font-size:14px}.detailmeta{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.modal .report-image{border-radius:14px;margin-top:15px;height:190px}.configbanner{background:#eaf2ff;border:1px solid #cadcf9;color:#294a78;padding:12px 14px;border-radius:12px;font-size:13px;margin-bottom:18px}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr;padding:44px 0}.visual{max-width:560px}.report-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(2,1fr)}.navlink{display:none}}
+@media(max-width:560px){.wrap{padding:0 15px}.nav{min-height:66px}.brand{font-size:18px}.navright .btn{padding:9px 11px}.hero h1{font-size:42px}.hero-grid{gap:24px}.stats{gap:9px}.stat{padding:14px}.stat .num{font-size:25px}.report-grid,.two-col{grid-template-columns:1fr}.section{padding:32px 0}.section-head{align-items:start;flex-direction:column}.formgrid{grid-template-columns:1fr}.formgroup.full{grid-column:auto}.visual{min-height:280px}.floatcard.bottom{left:15px;right:15px}.toolbar .field{width:100%;flex:auto}.footerinner{display:block}.footerinner>*{display:block;margin:6px 0}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap nav">
+<a class="brand" href="#"><span class="logo">⌖</span><span>CivicLens</span></a>
+<div class="navright"><a class="navlink" href="#reports">Explore reports</a><a class="navlink" href="#how">How it works</a><button class="btn primary" id="navReport">＋ Report an issue</button></div>
+</div></div>
+<header class="hero"><div class="wrap hero-grid">
+<div><div class="eyebrow">Your neighbourhood. Your voice.</div><h1>See a problem?<br>Make it visible.</h1><p>CivicLens helps communities report local issues, bring neighbours together, and follow progress toward safer, cleaner streets.</p><div class="hero-actions"><button class="btn primary" id="heroReport">Report a local issue&nbsp; ↗</button><a class="btn secondary" href="#reports" style="text-decoration:none">Explore community reports</a></div><div class="hero-note">A community-powered platform. Government response is not automatic.</div></div>
+<div class="visual"><div class="mapfake"><span class="pin p1"></span><span class="pin p2"></span><span class="pin p3"></span></div><div class="floatcard bottom"><span class="miniicon">✓</span><div><strong>Every report creates visibility</strong><small>Track updates. Support your neighbours.</small></div><span class="pill" style="margin-left:auto">Community</span></div></div>
+</div></header>
+<main class="wrap">
+<section class="section" style="padding-top:0"><div class="stats">
+<div class="stat"><div class="num" id="statTotal">0</div><div class="label">Community reports</div></div>
+<div class="stat"><div class="num" id="statSupport">0</div><div class="label">Neighbour supports</div></div>
+<div class="stat"><div class="num" id="statProgress">0</div><div class="label">In progress</div></div>
+<div class="stat"><div class="num" id="statResolved">0</div><div class="label">Marked resolved</div></div>
+</div></section>
+<section class="section" id="reports"><div class="section-head"><div><div class="eyebrow" style="color:var(--green)">Community feed</div><h2>Local issues, in one place</h2><p class="sub">Search reports, support an issue, or add useful information.</p></div><button class="btn darkbtn" id="feedReport">＋ Add a report</button></div>
+<div class="notice"><strong>Maharashtra pilot:</strong> This version is limited to Maharashtra and the locations across all six Maharashtra divisions currently provided. Reports are stored in this browser only until an online backend is connected.</div>
+<div class="toolbar"><input class="field search" id="search" placeholder="Search by issue, area or Maharashtra location…"><select class="field" id="categoryFilter"><option value="">All categories</option><option>Road damage</option><option>Garbage</option><option>Streetlight</option><option>Water & drainage</option><option>Public safety</option><option>Other</option></select><select class="field" id="statusFilter"><option value="">All statuses</option><option>Reported</option><option>Under Review</option><option>In Progress</option><option>Resolved</option></select><select class="field" id="sortFilter"><option value="recent">Most recent</option><option value="support">Most supported</option></select></div>
+<div class="report-grid" id="reportGrid"></div>
+</section>
+<section class="section" id="how"><div class="section-head"><div><div class="eyebrow" style="color:var(--green)">Simple by design</div><h2>From noticing to taking action</h2></div></div>
+<div class="two-col"><div class="info-card"><div class="steps">
+<div class="step"><span class="stepnum">1</span><div><strong>Report what you see</strong><p class="sub">Add a clear description, category, and location. Never include private information about other people.</p></div></div>
+<div class="step"><span class="stepnum">2</span><div><strong>Bring the community together</strong><p class="sub">Neighbours can support a report and add constructive updates.</p></div></div>
+<div class="step"><span class="stepnum">3</span><div><strong>Track progress transparently</strong><p class="sub">Authorized moderators can review reports and update their status.</p></div></div>
+</div></div><div class="info-card"><h3>Built for trust</h3><p class="sub">CivicLens is designed to help people organise local information—not to replace official complaint channels.</p><div style="display:grid;gap:10px;margin-top:18px"><div>✓ Clear report statuses</div><div>✓ Community support and comments</div><div>✓ Moderation tools for a demo representative</div><div>✓ No claim of official government affiliation</div></div><div class="notice" style="margin-bottom:0">Use official municipal or emergency services for urgent issues. Do not post phone numbers, home addresses, faces, or other sensitive personal information.</div></div></div>
+</section>
+<section class="section"><div class="info-card"><div class="section-head" style="margin:0"><div><h2>Demo moderator dashboard</h2><p class="sub">For hackathon demonstration only. A real service needs verified accounts and role-based permissions.</p></div><button class="btn outline" id="toggleAdmin">Open dashboard</button></div><div id="adminPanel" class="adminpanel hide" style="margin-top:18px"><h3>Review community reports</h3><p class="sub">Select a report and update its status. This demo control is not secure authentication.</p><div id="adminRows"></div></div></div></section>
+</main>
+<footer class="footer"><div class="wrap footerinner"><div><strong style="color:white;font-size:18px">CivicLens</strong><div>Small reports. Better neighbourhoods.</div></div><small>Independent community prototype · Not an official government service</small></div></footer>
+<div class="modal-backdrop" id="reportModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><div class="modalhead"><div><div class="eyebrow" style="color:var(--green)">Make your voice count</div><h2 id="modalTitle">Report a local issue</h2></div><button class="close" id="closeModal" aria-label="Close">×</button></div>
+<form id="reportForm"><div class="formgrid">
+<div class="formgroup full"><label for="title">Short title *</label><input class="field" id="title" required maxlength="90" placeholder="e.g. Large pothole near bus stop"></div>
+<div class="formgroup"><label for="category">Category *</label><select class="field" id="category" required><option>Road damage</option><option>Garbage</option><option>Streetlight</option><option>Water & drainage</option><option>Public safety</option><option>Other</option></select></div>
+<div class="formgroup"><label for="priority">Impact</label><select class="field" id="priority"><option>Normal</option><option>High</option><option>Urgent</option></select></div>
+<div class="formgroup"><label for="state">State *</label><input class="field" id="state" value="Maharashtra" readonly aria-readonly="true"></div>
+<div class="formgroup"><label for="division">Division</label>
+<select id="division" name="division" required>
+  <option value="">Select division</option>
+</select>
+<label for="city">City / Town / Area</label>
+<select id="city" name="city" required disabled>
+  <option value="">Select a division first</option>
+</select><span class="helper">Only locations from the list you provided are included for now.</span></div>
+<div class="formgroup full"><label for="area">Neighbourhood / full address *</label><input class="field" id="area" required maxlength="160" placeholder="Enter your area, street or nearby landmark"></div>
+<div class="formgroup full"><label for="description">What is happening? *</label><textarea class="field" id="description" required maxlength="900" placeholder="Describe the issue clearly. Avoid personal information."></textarea></div>
+<div class="formgroup full"><label for="photo">Photo (optional)</label><input class="field" id="photo" type="file" accept="image/*"><span class="helper">Demo mode: images are kept in this browser. Use a small image (under 1 MB).</span><img id="photoPreview" class="hide" alt="Selected photo preview" style="max-height:160px;max-width:100%;object-fit:contain;border-radius:10px"></div>
+<div class="formgroup full"><label style="display:flex;gap:8px;align-items:flex-start;font-weight:600"><input id="privacy" type="checkbox" required style="margin-top:4px"> I confirm this report is respectful and does not expose private or sensitive information.</label></div>
+</div><div class="modalfoot"><button type="button" class="btn outline" id="cancelModal">Cancel</button><button type="submit" class="btn darkbtn">Submit report</button></div></form></div></div>
+<div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true"><div class="modal"><div class="modalhead"><div><div class="eyebrow" style="color:var(--green)">Report details</div><h2 id="detailTitle">Issue</h2></div><button class="close" id="closeDetail" aria-label="Close">×</button></div><div id="detailContent"></div></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const KEY='civiclens_mvp_v1';
+const sampleReports=[
+{id:'CL-1042',title:'Deep pothole creating a hazard',category:'Road damage',priority:'High',state:'Maharashtra',city:'Nagpur',area:'near the bus stop',description:'A deep pothole has formed near the bus stop. It is difficult to see after dark and cyclists need to slow down suddenly.',status:'In Progress',supports:24,comments:[{name:'Neighbour',text:'Reported here so others can be aware. Please be careful after rain.'}],created:Date.now()-3600000,icon:'🛣️'},
+{id:'CL-1041',title:'Overflowing public garbage bin',category:'Garbage',priority:'Normal',state:'Maharashtra',city:'Kamptee',area:'near the community garden entrance',description:'The public bin appears to be full and rubbish is spilling onto the pavement.',status:'Under Review',supports:17,comments:[{name:'Community member',text:'This has been happening for a few days.'}],created:Date.now()-86400000,icon:'🗑️'}
+];
+let reports=[];
+try{reports=JSON.parse(localStorage.getItem(KEY)||'null')||sampleReports}catch(e){reports=sampleReports}
+let selectedPhoto='';
+let activeDetail=null;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(reports))}catch(e){toast('Storage is full. Try removing the photo or using a smaller image.')}render()}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function niceDate(ts){const d=Math.max(0,Date.now()-ts);if(d<3600000)return Math.max(1,Math.floor(d/60000))+' min ago';if(d<86400000)return Math.floor(d/3600000)+' hr ago';return Math.floor(d/86400000)+' days ago'}
+function statusClass(s){return s==='Resolved'?'resolved':s==='In Progress'?'progress':s==='Under Review'?'review':''}
+function iconFor(c){return {'Road damage':'🛣️','Garbage':'🗑️','Streetlight':'💡','Water & drainage':'💧','Public safety':'⚠️','Other':'📍'}[c]||'📍'}
+function filtered(){let q=document.getElementById('search').value.toLowerCase().trim(),cat=document.getElementById('categoryFilter').value,st=document.getElementById('statusFilter').value,sort=document.getElementById('sortFilter').value;let a=reports.filter(r=>(!q||[r.title,r.city,r.state,r.area,r.description,r.category].join(' ').toLowerCase().includes(q))&&(!cat||r.category===cat)&&(!st||r.status===st));a.sort((x,y)=>sort==='support'?y.supports-x.supports:y.created-x.created);return a}
+function render(){document.getElementById('statTotal').textContent=reports.length;document.getElementById('statSupport').textContent=reports.reduce((n,r)=>n+(r.supports||0),0);document.getElementById('statProgress').textContent=reports.filter(r=>r.status==='In Progress').length;document.getElementById('statResolved').textContent=reports.filter(r=>r.status==='Resolved').length;let arr=filtered(),grid=document.getElementById('reportGrid');if(!arr.length){grid.innerHTML='<div class="empty"><div style="font-size:30px">⌕</div><strong>No reports found</strong><p>Try another search or clear the filters.</p><button class="btn outline small" onclick="clearFilters()">Clear filters</button></div>'}else grid.innerHTML=arr.map(r=>`<article class="report"><div class="report-image">${r.photo?`<img src="${r.photo}" alt="Photo for ${esc(r.title)}">`:`<span>${iconFor(r.category)}</span>`}<span class="status ${statusClass(r.status)}">${esc(r.status)}</span></div><div class="report-content"><div class="cat">${esc(r.category)} ${r.priority==='Urgent'?' · URGENT':''}</div><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p><div class="meta"><span>📍 ${esc(r.area)}, ${esc(r.city)}</span><span>• ${niceDate(r.created)}</span></div><div class="report-actions"><button class="support ${r.supported?'on':''}" onclick="supportReport('${r.id}')">${r.supported?'✓ Supported':'♡ Support'} · ${r.supports||0}</button><button class="textbtn" onclick="openDetail('${r.id}')">Details & comments →</button></div></div></article>`).join('');renderAdmin()}
+function clearFilters(){document.getElementById('search').value='';document.getElementById('categoryFilter').value='';document.getElementById('statusFilter').value='';document.getElementById('sortFilter').value='recent';render()}
+function toast(t){let el=document.getElementById('toast');el.textContent=t;el.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove('show'),3000)}
+function supportReport(id){let r=reports.find(x=>x.id===id);if(!r)return;if(r.supported){r.supported=false;r.supports=Math.max(0,(r.supports||0)-1);toast('Support removed')}else{r.supported=true;r.supports=(r.supports||0)+1;toast('Thanks for supporting this report')}save()}
+function openModal(){document.getElementById('reportModal').classList.add('open');document.getElementById('title').focus()}
+function closeModal(){document.getElementById('reportModal').classList.remove('open');document.getElementById('reportForm').reset();selectedPhoto='';document.getElementById('photoPreview').classList.add('hide');document.getElementById('photoPreview').src=''}
+['navReport','heroReport','feedReport'].forEach(id=>document.getElementById(id).addEventListener('click',openModal));
+['closeModal','cancelModal'].forEach(id=>document.getElementById(id).addEventListener('click',closeModal));
+document.getElementById('reportModal').addEventListener('click',e=>{if(e.target.id==='reportModal')closeModal()});
+document.getElementById('photo').addEventListener('change',e=>{let f=e.target.files[0];if(!f){selectedPhoto='';return}if(!f.type.startsWith('image/')){toast('Please choose an image file.');e.target.value='';return}if(f.size>1024*1024){toast('Please choose an image under 1 MB for this browser demo.');e.target.value='';return}let rd=new FileReader();rd.onload=()=>{selectedPhoto=rd.result;let p=document.getElementById('photoPreview');p.src=selectedPhoto;p.classList.remove('hide')};rd.readAsDataURL(f)});
+document.getElementById('reportForm').addEventListener('submit',e=>{e.preventDefault();let title=document.getElementById('title').value.trim(),description=document.getElementById('description').value.trim();if(!title||!description)return;let r={id:'CL-'+Math.floor(1000+Math.random()*9000),title,category:document.getElementById('category').value,priority:document.getElementById('priority').value,state:document.getElementById('state').value.trim(),city:document.getElementById('city').value.trim(),area:document.getElementById('area').value.trim(),description,status:'Reported',supports:0,supported:false,comments:[],created:Date.now(),photo:selectedPhoto,icon:iconFor(document.getElementById('category').value)};reports.unshift(r);save();closeModal();document.getElementById('reports').scrollIntoView({behavior:'smooth'});toast('Report added in this browser demo.');});
+['search','categoryFilter','statusFilter','sortFilter'].forEach(id=>document.getElementById(id).addEventListener(id==='search'?'input':'change',render));
+function openDetail(id){let r=reports.find(x=>x.id===id);if(!r)return;activeDetail=id;document.getElementById('detailTitle').textContent=r.title;document.getElementById('detailContent').innerHTML=`${r.photo?`<div class="report-image"><img src="${r.photo}" alt=""></div>`:''}<div class="detailmeta"><span class="pill">${esc(r.id)}</span><span class="pill">${esc(r.status)}</span><span class="pill">${esc(r.category)}</span><span class="pill">${esc(r.priority)} impact</span></div><p class="detailbody">📍 ${esc(r.area)}, ${esc(r.city)}, ${esc(r.state)}<br><br>${esc(r.description)}</p><div style="display:flex;align-items:center;justify-content:space-between;margin-top:18px"><strong>Community comments (${r.comments?.length||0})</strong><span class="helper">Be respectful; no private details.</span></div><div class="commentlist">${(r.comments||[]).map(c=>`<div class="comment"><strong>${esc(c.name||'Community member')}</strong><div>${esc(c.text)}</div></div>`).join('')||'<p class="sub">No comments yet. Add a useful update.</p>'}</div><form class="commentform" onsubmit="addComment(event,'${r.id}')"><input class="field" id="commentInput" maxlength="250" required placeholder="Add a helpful comment…"><button class="btn darkbtn small" type="submit">Post</button></form><div class="helper" style="margin-top:8px">Comments in this demo are stored only in this browser.</div>`;document.getElementById('detailModal').classList.add('open')}
+function addComment(e,id){e.preventDefault();let r=reports.find(x=>x.id===id),input=document.getElementById('commentInput');if(!r||!input.value.trim())return;r.comments=r.comments||[];r.comments.push({name:'Community member',text:input.value.trim()});save();openDetail(id);toast('Comment added in this browser demo.')}
+document.getElementById('closeDetail').addEventListener('click',()=>document.getElementById('detailModal').classList.remove('open'));
+document.getElementById('detailModal').addEventListener('click',e=>{if(e.target.id==='detailModal')e.currentTarget.classList.remove('open')});
+document.getElementById('toggleAdmin').addEventListener('click',()=>{let p=document.getElementById('adminPanel');p.classList.toggle('hide');document.getElementById('toggleAdmin').textContent=p.classList.contains('hide')?'Open dashboard':'Close dashboard';renderAdmin()});
+function renderAdmin(){let el=document.getElementById('adminRows');if(!el)return;el.innerHTML=reports.slice(0,20).map(r=>`<div class="adminrow" style="border-top:1px solid #d2e6d7;padding:10px 0"><div style="flex:1;min-width:160px"><strong>${esc(r.title)}</strong><div class="helper">${esc(r.id)} · ${esc(r.city)}, ${esc(r.state)}</div></div><select class="field" aria-label="Status for ${esc(r.title)}" onchange="changeStatus('${r.id}',this.value)">${['Reported','Under Review','In Progress','Resolved'].map(s=>`<option ${s===r.status?'selected':''}>${s}</option>`).join('')}</select></div>`).join('')||'<p>No reports to review.</p>'}
+function changeStatus(id,status){let r=reports.find(x=>x.id===id);if(!r)return;r.status=status;save();toast('Status updated in demo mode.')}
+render();
+</script>
+
+<script>
+  // CivicLens Maharashtra divisions and locations (based on the list supplied by the user).
+  const civicLensLocations = {"Konkan Division": ["Mumbai", "Navi Mumbai", "Thane", "Kalyan-Dombivli", "Vasai-Virar", "Mira-Bhayandar", "Bhiwandi", "Ulhasnagar", "Panvel", "Palghar", "Badlapur", "Ambernath", "Dahanu", "Jawhar", "Alibag", "Pen", "Roha", "Mahad", "Karjat", "Ratnagiri", "Chiplun", "Khed", "Rajapur", "Oros", "Kankavli", "Sawantwadi", "Malvan", "Vengurla"], "Pune Division": ["Pune", "Pimpri-Chinchwad", "Solapur", "Kolhapur", "Sangli", "Miraj", "Ichalkaranji", "Satara", "Karad", "Baramati", "Lonavala", "Talegaon Dabhade", "Bhor", "Shirur", "Daund", "Indapur", "Phaltan", "Wai", "Mahabaleshwar", "Pandharpur", "Barshi", "Karmala", "Sangola", "Akluj", "Gadhinglaj", "Kagal", "Kupwad", "Islampur", "Vita", "Ashta"], "Nashik Division": ["Nashik", "Jalgaon", "Dhule", "Ahmednagar (Ahilyanagar)", "Malegaon", "Nandurbar", "Bhusawal", "Igatpuri", "Sinnar", "Manmad", "Yeola", "Ozar", "Shirdi", "Sangamner", "Kopargaon", "Rahuri", "Shrirampur", "Chalisgaon", "Amalner", "Chopda", "Pachora", "Yawal", "Shirpur", "Shahada", "Navapur"], "Chhatrapati Sambhajinagar Division": ["Chhatrapati Sambhajinagar", "Nanded", "Latur", "Jalna", "Parbhani", "Dharashiv", "Beed", "Hingoli", "Paithan", "Vaijapur", "Kannad", "Sillod", "Bhokardan", "Partur", "Ambad", "Degloor", "Kandhar", "Kinwat", "Bhokar", "Udgir", "Ausa", "Nilanga", "Ahmadpur", "Ambajogai", "Parli", "Majalgaon", "Georai", "Tuljapur", "Umerga", "Kalamb", "Basmat", "Kalamnuri", "Gangakhed", "Manwath"], "Amravati Division": ["Amravati", "Akola", "Yavatmal", "Buldhana", "Washim", "Achalpur", "Anjangaon", "Dhamangaon", "Morshi", "Warud", "Daryapur", "Chikhaldara", "Akot", "Murtizapur", "Telhara", "Khamgaon", "Malkapur", "Shegaon", "Chikhli", "Mehkar", "Deulgaon Raja", "Pusad", "Pandharkawada", "Wani", "Digras", "Darwha", "Ghatanji", "Karanja Lad", "Mangrulpir", "Risod"], "Nagpur Division": ["Nagpur", "Chandrapur", "Gondia", "Wardha", "Bhandara", "Gadchiroli", "Kamptee", "Katol", "Savner", "Ramtek", "Umred", "Kalameshwar", "Narkhed", "Ballarpur", "Bhadravati", "Warora", "Bramhapuri", "Rajura", "Hinganghat", "Arvi", "Pulgaon", "Tumsar", "Pauni", "Sakoli", "Tirora", "Desaiganj (Wadsa)", "Aheri"]};
+  const divisionSelect = document.getElementById('division');
+  const citySelect = document.getElementById('city');
+  if (divisionSelect && citySelect) {
+    Object.keys(civicLensLocations).forEach((division) => {
+      const option = document.createElement('option');
+      option.value = division;
+      option.textContent = division;
+      divisionSelect.appendChild(option);
+    });
+    divisionSelect.addEventListener('change', () => {
+      citySelect.innerHTML = '';
+      const placeholder = document.createElement('option');
+      placeholder.value = '';
+      placeholder.textContent = divisionSelect.value ? 'Select city / town / area' : 'Select a division first';
+      citySelect.appendChild(placeholder);
+      const locations = civicLensLocations[divisionSelect.value] || [];
+      locations.forEach((location) => {
+        const option = document.createElement('option');
+        option.value = location;
+        option.textContent = location;
+        citySelect.appendChild(option);
+      });
+      citySelect.disabled = locations.length === 0;
+    });
+  }
+</script>
+
+<!-- ===== CivicLens Helper chatbot (bottom-left) ===== -->
+<style>
+#clb-root{position:fixed;left:18px;bottom:18px;z-index:15;font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+#clb-root *{box-sizing:border-box}
+.clb-launch{display:flex;align-items:center;gap:9px;border:0;border-radius:999px;background:#123c35;color:#fff;padding:12px 18px 12px 14px;font-weight:750;box-shadow:0 10px 28px #123c3544;cursor:pointer;transition:transform .15s}
+.clb-launch:hover{transform:translateY(-2px)}
+.clb-launch:focus-visible,.clb-x:focus-visible,.clb-chip:focus-visible,.clb-form button:focus-visible{outline:3px solid #d6f36a;outline-offset:2px}
+.clb-l-ic{width:30px;height:30px;border-radius:10px;background:var(--lime,#d6f36a);display:grid;place-items:center;font-size:16px}
+.clb-panel{position:absolute;left:0;bottom:66px;width:380px;max-width:calc(100vw - 36px);height:min(560px,calc(100vh - 110px));background:#fff;border:1px solid var(--line,#e1e8e2);border-radius:20px;box-shadow:0 22px 60px #0b211d40;display:flex;flex-direction:column;overflow:hidden;transform-origin:bottom left;animation:clbIn .18s ease-out}
+.clb-panel[hidden]{display:none}
+@keyframes clbIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+.clb-head{display:flex;align-items:center;gap:11px;background:#123c35;color:#fff;padding:14px 14px 14px 16px}
+.clb-head>div:nth-child(2){flex:1;min-width:0}
+.clb-head strong{display:block;font-size:15px;letter-spacing:-.2px}
+.clb-head small{display:block;color:#b5cec5;font-size:12px}
+.clb-av{width:36px;height:36px;border-radius:12px;background:var(--lime,#d6f36a);color:#123c35;display:grid;place-items:center;font-size:19px;flex:none}
+.clb-x{border:0;background:#ffffff1a;color:#fff;border-radius:10px;width:34px;height:34px;font-size:20px;cursor:pointer;flex:none}
+.clb-x:hover{background:#ffffff30}
+.clb-log{flex:1;overflow-y:auto;padding:16px 14px;display:flex;flex-direction:column;gap:10px;background:#fbfcfa;scroll-behavior:smooth}
+.clb-msg{max-width:90%;padding:10px 13px;border-radius:15px;word-wrap:break-word;overflow-wrap:anywhere}
+.clb-msg.bot{background:#eef3ec;color:var(--ink,#152b27);border-bottom-left-radius:5px;align-self:flex-start}
+.clb-msg.user{background:var(--green,#176b55);color:#fff;border-bottom-right-radius:5px;align-self:flex-end}
+.clb-msg strong.clb-t{display:block;margin-bottom:4px;font-size:15px}
+.clb-msg ol{margin:6px 0 0;padding-left:20px}
+.clb-msg li{margin:5px 0}
+.clb-msg p{margin:0}
+.clb-note{margin-top:9px;padding:8px 10px;border-radius:10px;background:#fff8e9;border:1px solid #f2dfb6;color:#795521;font-size:13px}
+.clb-sos{margin-top:2px;padding:10px 12px;border-radius:12px;background:#fdeceb;border:1px solid #f1c3be;color:#8a2f25;font-size:13.5px}
+.clb-sos strong{display:block;margin-bottom:2px}
+.clb-chips{display:flex;flex-wrap:wrap;gap:7px;align-self:flex-start;max-width:96%}
+.clb-chip{border:1px solid #b7dfcb;background:#fff;color:var(--green,#176b55);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700;cursor:pointer;transition:background .12s}
+.clb-chip:hover{background:var(--green2,#dff3e9)}
+.clb-chip.alt{border-color:var(--line,#e1e8e2);color:var(--ink,#152b27)}
+.clb-typing{display:flex;gap:4px;padding:13px 14px}
+.clb-typing i{width:7px;height:7px;border-radius:50%;background:#8aa59b;animation:clbDot 1s infinite}
+.clb-typing i:nth-child(2){animation-delay:.15s}.clb-typing i:nth-child(3){animation-delay:.3s}
+@keyframes clbDot{0%,60%,100%{opacity:.3}30%{opacity:1}}
+.clb-form{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line,#e1e8e2);background:#fff}
+.clb-form input{flex:1;min-width:0;border:1px solid var(--line,#e1e8e2);border-radius:12px;padding:10px 12px;font:inherit;outline:none}
+.clb-form input:focus{border-color:#4b9a7c;box-shadow:0 0 0 3px #176b5515}
+.clb-form button{border:0;border-radius:12px;background:var(--green,#176b55);color:#fff;width:44px;font-size:16px;cursor:pointer}
+.clb-foot{padding:0 14px 10px;font-size:11.5px;color:var(--muted,#657873);background:#fff;text-align:center}
+@media(max-width:560px){#clb-root{left:12px;bottom:12px}.clb-panel{width:calc(100vw - 24px);max-width:none;height:min(580px,calc(100vh - 92px))}.clb-l-tx{display:none}.clb-launch{padding:12px}}
+@media(prefers-reduced-motion:reduce){.clb-panel,.clb-typing i{animation:none}.clb-log{scroll-behavior:auto}.clb-launch{transition:none}}
+</style>
+
+<div id="clb-root">
+  <button class="clb-launch" id="clbLaunch" type="button" aria-label="Open CivicLens Helper chat" aria-expanded="false" aria-controls="clbPanel"><span class="clb-l-ic">💬</span><span class="clb-l-tx">Need a quick fix?</span></button>
+  <section class="clb-panel" id="clbPanel" role="dialog" aria-label="CivicLens Helper" hidden>
+    <header class="clb-head"><div class="clb-av">⌖</div><div><strong>CivicLens Helper</strong><small>Temporary fixes while repairs are pending</small></div><button class="clb-x" id="clbClose" type="button" aria-label="Close chat">×</button></header>
+    <div class="clb-log" id="clbLog" role="log" aria-live="polite"></div>
+    <form class="clb-form" id="clbForm" autocomplete="off"><input id="clbInput" maxlength="200" placeholder="Describe the problem…" aria-label="Describe your problem"><button type="submit" aria-label="Send message">➤</button></form>
+    <div class="clb-foot">Temporary safety tips, not official advice. Emergency? Call 112.</div>
+  </section>
+</div>
+
+<script>
+(function(){
+  /* ---------- Knowledge base: edit or add topics here ---------- */
+  var CATS=['Road damage','Garbage','Streetlight','Water & drainage','Public safety','Other'];
+  var ICON={'Road damage':'🛣️','Garbage':'🗑️','Streetlight':'💡','Water & drainage':'💧','Public safety':'⚠️','Other':'📍'};
+  // Broad words that point to a category when no specific problem matches (English + common Hindi/Marathi words)
+  var CATKW={
+    'Road damage':['road','rasta','raste','footpath','highway','pavement'],
+    'Garbage':['garbage','trash','waste','kachra','kachara','dustbin','rubbish','litter'],
+    'Streetlight':['streetlight','street light','lamp','batti','pole','electric','light'],
+    'Water & drainage':['water','paani','pani','drain','sewage','sewer','gatar','nali','pipe','tap'],
+    'Public safety':['safety','unsafe','danger','dangerous','risk'],
+    'Other':['other','noise','parking','encroach']
+  };
+  var T=[
+    {cat:'Road damage',label:'Pothole',kw:['pothole','potholes','broken road','damaged road','road damage','crater','khadda','khadde','khaddya','bad road','uneven road'],
+     steps:['Slow down and keep a safe distance. Avoid sudden swerving, especially on two-wheelers, at night, or after rain.','If it is safe and away from moving traffic, mark the edges with bright cloth on a stick, stones, or branches so others can see it. Never stand in the traffic lane.','Tell neighbours and local groups so people avoid the spot.','Avoid filling it with loose soil in the rain. It looks flat but stays soft and hides the depth.','Take a clear photo with a landmark and report it so others can support it.']},
+    {cat:'Road damage',label:'Waterlogged road',kw:['waterlogged','water logging','waterlogging','road flooded','flooded road','water on road','standing water on road','submerged road'],
+     steps:['Do not drive or walk through water if you cannot see the road. Potholes and open manholes hide underneath.','Take another route or wait for the water to go down.','If you must cross, stay on higher ground and test the ground ahead with a stick. Keep children away from drain edges.','If a two-wheeler stalls in water, do not restart it. Push it to dry ground first.','Stay away from poles and any wires touching water.']},
+    {cat:'Road damage',label:'Road cave-in or sinkhole',kw:['sinkhole','cave in','cave-in','caved','road collapse','road sunk','sunken road','road sinking','subsidence'],
+     note:'A cave-in can widen suddenly. Keep back from the edge.',
+     steps:['Keep yourself and others well back from the edge.','Block it from a distance with rope, barricades, heavy stones, or bright cloth.','Stop vehicles and warn people coming towards it.','Call 112 if it is on a busy road or if a vehicle or person has fallen in.','Note the exact location and report it as Urgent.']},
+    {cat:'Road damage',label:'Broken footpath',kw:['footpath','broken footpath','pavement','broken slab','footpath broken','sidewalk','paver'],
+     steps:['Use the safer side of the road or a clear stretch of footpath.','Hold children by the hand and help elderly or disabled neighbours around it.','Mark broken slabs or gaps with bright tape or stones so people notice them.','Avoid walking there in the dark or in the rain.','Report it with a photo and the nearest landmark.']},
+
+    {cat:'Garbage',label:'Overflowing bin',kw:['overflowing','overflow bin','bin full','full bin','garbage overflow','garbage pile','garbage dump','garbage not collected','not collected','kachra','kachara','dustbin','rubbish pile','waste pile','trash pile'],
+     steps:['Do not add waste on top of or beside the full bin.','Keep your own waste in tied bags, with wet and dry waste separate, until it is collected.','Never burn it. The smoke is harmful, and fires spread quickly.','Keep children and pets away from the pile.','Ask neighbours or your society to request an extra pickup together. Joint requests get noticed. Report it here with a photo.']},
+    {cat:'Garbage',label:'Burning waste',kw:['burning waste','waste burning','burning garbage','garbage burning','garbage fire','burning trash','smoke from garbage','plastic burning'],
+     steps:['Move away, upwind of the smoke, and keep children, elderly people and anyone with asthma indoors.','Close windows and cover your nose and mouth with a damp cloth or a mask.','Do not try to put out a large fire yourself.','Call 101 if it is spreading towards buildings or vehicles.','Take a photo from a safe distance and report it with the exact spot.']},
+    {cat:'Garbage',label:'Bad smell, flies or rats',kw:['bad smell','stink','stinking','smell','foul smell','flies','rats','rat','rodent','cockroach','maggots','durgandh'],
+     steps:['Keep your own waste in sealed bags and keep food covered.','Ask your society or ward office to spread lime or a disinfectant. Do not handle chemicals with bare hands.','Use window screens or nets, and wash hands often.','Keep children away from the dump area.','Report the spot with a photo so the problem is tracked.']},
+    {cat:'Garbage',label:'Dead animal',kw:['dead animal','dead dog','dead cow','dead cat','dead bird','carcass','animal carcass','dead rat'],
+     steps:['Do not touch it with bare hands.','Keep children and pets away from it.','Cover it with a cloth or sheet if you can do so safely.','Inform the local civic body with the exact location as soon as you can.','If many birds or animals are dying in the same place, mention that in the report. It may need a health check.']},
+
+    {cat:'Streetlight',label:'Dark street',kw:['dark street','dark road','dark lane','streetlight not working','street light not working','streetlight off','light not working','lights not working','no light','no streetlight','no street light','light off','batti band','batti nahi','lights out'],
+     steps:['Walk in groups when you can, and use your phone torch.','Wear light or reflective clothes so drivers can see you.','Avoid isolated shortcuts. Stick to lit, busy routes.','Share your live location with family when walking at night.','Shopkeepers and societies can leave an outside light on facing the lane. Neighbours can also put a solar lamp at stairs and crossings.','Report it with the pole number if one is visible.']},
+    {cat:'Streetlight',label:'Hanging or sparking wire',kw:['hanging wire','loose wire','sparking','spark','exposed wire','live wire','broken wire','wire fallen','fallen wire','electric pole','pole leaning','pole shock','electric shock','current in pole','cable hanging','buzzing'],
+     note:'Never touch the wire, the pole, or anything touching them, and stay clear of wet ground nearby.',
+     steps:['Stay well back, at least 10 metres, and keep others away.','Do not try to move a wire with a stick or any object.','Warn people and vehicles from a safe distance.','Call 112 and your electricity provider\'s emergency number.','Avoid the area during rain. Wet ground can carry current.']},
+
+    {cat:'Water & drainage',label:'No water supply',kw:['no water','water supply','water not coming','no tap water','tap dry','water shortage','water cut','no paani','paani nahi','pani nahi','low pressure','tanker'],
+     steps:['Check your own tank and valve first, and ask neighbours whether it is only your building.','Save water for drinking and cooking first. Reuse bath and laundry water for flushing and cleaning.','Keep stored water covered and clean.','Ask your society to request a water tanker through the ward office.','Buy sealed drinking water if you need to, and report the outage with the affected area.']},
+    {cat:'Water & drainage',label:'Dirty or smelly water',kw:['dirty water','muddy water','yellow water','smelly water','contaminated','contaminated water','water smell','tap water dirty','impure water','unsafe water','gandha paani','water colour','brown water'],
+     steps:['Do not drink or cook with it.','Let muddy water settle and strain it through clean cloth. Then bring it to a rolling boil for at least a minute, let it cool, and store it covered.','You can also use a water filter or chlorine tablets. Follow the label and ask a pharmacist if unsure.','Use the dirty water only for washing floors or flushing.','If anyone has diarrhoea, vomiting, or fever, see a doctor and drink ORS.']},
+    {cat:'Water & drainage',label:'Pipe leakage',kw:['leak','leakage','leaking','pipe burst','burst pipe','pipeline','broken pipe','water wasting','pipe leak','tap leaking'],
+     steps:['If the pipe is on your property, close the nearest valve.','Collect leaking water in buckets. It is useful for flushing and cleaning.','Keep leaking water away from sockets and electrical fittings.','Do not dig around the pipe yourself.','Mark and photograph the spot and note which pipe it is, then report it.']},
+    {cat:'Water & drainage',label:'Blocked drain or sewage',kw:['blocked drain','drain blocked','clogged','sewage','sewer','overflowing drain','drain overflow','gutter','gatar','nali','manhole overflow','dirty drain','drainage'],
+     steps:['Keep away from the water. Wear boots and gloves if you must go near it, and keep children and pets away.','Do not pour chemicals into the drain or push objects into it.','Put sandbags or a raised board at your doorway to keep sewage out.','Stop adding plastic or waste to nearby drains.','Disinfect the area afterwards with diluted bleach or phenyl, as the label says, and wash your hands well. Report it with a photo.']},
+    {cat:'Water & drainage',label:'Stagnant water and mosquitoes',kw:['mosquito','mosquitoes','stagnant','dengue','malaria','standing water','machhar','larvae','fogging','puddle'],
+     steps:['Empty standing water in pots, coolers, tyres, and buckets at least once a week.','Cover water tanks and storage containers tightly.','Use nets or repellent, especially for children and while sleeping.','If you get fever with body pain, get tested for dengue or malaria.','Ask the civic body for fogging or larvicide near stagnant roadside water, and report the spot.']},
+    {cat:'Water & drainage',label:'Flooding',kw:['flood','flooding','flooded','water entering house','water in house','heavy rain','rainwater','water entering','overflow river','river overflow'],
+     note:'If water is near electrical points, do not touch switches or appliances.',
+     steps:['If you can reach the main switch on dry ground, switch off the electricity.','Move valuables, documents, and medicines to a higher place.','Do not walk or drive through floodwater. It can hide open drains and live wires.','Keep your phone charged, and keep drinking water and essentials ready.','Follow local alerts. Call 112 if you or someone else is trapped.']},
+
+    {cat:'Public safety',label:'Open manhole or pit',kw:['open manhole','manhole','open pit','pit','uncovered','open drain cover','excavation','digging','construction pit','hole in road','open chamber'],
+     note:'Report this as Urgent. An open manhole can seriously injure someone.',
+     steps:['Keep away from the edge and warn people nearby.','Barricade around it from a safe distance using heavy stones, chairs, branches, or bright cloth. Never stand in the traffic lane.','At night, leave a torch or reflective object nearby so drivers see it.','Call 112 if it is on a busy road or if someone has fallen in.','Take a photo and report it as Urgent.']},
+    {cat:'Public safety',label:'Fallen tree or branch',kw:['fallen tree','tree fell','tree fallen','broken branch','branch fell','tree on road','tree collapse','uprooted','tree blocking','tree down'],
+     steps:['Stay away, because wires may be tangled in the branches. Do not touch any branch near a wire.','Warn vehicles and divert traffic if you can do so safely.','Call 112 or 101 if someone is trapped or the tree is on wires or vehicles.','Do not cut large trees yourself. Contact the local civic body\'s tree or garden department.','Report it with a photo and location.']},
+    {cat:'Public safety',label:'Stray dogs',kw:['stray dog','stray dogs','dog bite','dogs barking','aggressive dog','street dog','kutte','kutra','rabies','dog attack','dog'],
+     note:'After any bite or deep scratch, wash with soap and running water for 15 minutes and see a doctor the same day for rabies treatment.',
+     steps:['Stay calm. Do not run, shout, or stare at the dog.','Stand still with your arms close, then back away slowly.','Do not feed or tease dogs near children\'s walking routes. Walk children in groups.','If a pack keeps gathering in one spot, avoid that route if possible.','Report the pack\'s location so the right body can respond.']},
+    {cat:'Public safety',label:'Unsafe area',kw:['unsafe','not safe','dangerous area','crime','theft','harassment','eve teasing','drunk','anti social','antisocial','gambling','lonely road','unsafe area','scary'],
+     steps:['Stay in groups and keep to lit, busy routes.','Share your live location with someone you trust.','Save 112 as a quick-dial number. Women can also call 181.','Neighbours can set up a watch group and keep each other informed.','Report the location without naming or photographing individuals.']},
+
+    {cat:'Other',label:'Noise, parking or encroachment',kw:['noise','loud','loudspeaker','speaker','parking','illegal parking','encroachment','encroach','hawker','stray cattle','cattle','cows on road','illegal','blocked road'],
+     steps:['Record the problem with date, time, and a photo or video of the place. Do not capture faces or personal details.','Talk to neighbours. Shared concerns are taken more seriously.','Post it here so others can support it.','Contact your ward office or local civic body with your report ID.','If there is no response in about a week, follow up in writing and escalate to a higher authority.']}
+  ];
+  var HOW={label:'How to report here',
+    steps:['Tap the "＋ Report an issue" button at the top of the page.','Give it a short title and choose the category.','Select your division and city, then add the street or landmark.','Describe what is happening. Add a photo under 1 MB if you can.','Submit it. Neighbours can then support it and add updates.']};
+  var EMERG=/\b(fire|electrocut|gas leak|drown|bleeding|injur|accident|unconscious|collaps|trapped|attack|assault)/i;
+  var GREET=/^(hi|hii|hello|hey|namaste|namaskar|good (morning|afternoon|evening))\b/i;
+  var THANKS=/\b(thanks|thank you|thx|dhanyavad|shukriya)\b/i;
+  var HOWRE=/\b(how (do|can|to) (i )?(report|complain|submit)|report an issue|make a report|submit a report|how does this work)\b/i;
+
+  /* ---------- Matching ---------- */
+  function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+  function kre(k){return new RegExp('\\b'+esc(k)+(k.length<=4?'s?\\b':''),'i')}
+  T.forEach(function(t){t.re=t.kw.map(function(k){return {w:k.indexOf(' ')>-1?3:(k.length>=6?2:1),r:kre(k)}})});
+  function findTopic(text){var best=null,bs=0;T.forEach(function(t){var s=0;t.re.forEach(function(k){if(k.r.test(text))s+=k.w});if(s>bs){bs=s;best=t}});return best}
+  function findCat(text){var best=null,bs=0;CATS.forEach(function(c){var s=0;(CATKW[c]||[]).forEach(function(k){if(kre(k).test(text))s+=1});if(s>bs){bs=s;best=c}});return best}
+
+  /* ---------- UI helpers ---------- */
+  var $=function(id){return document.getElementById(id)};
+  var launch=$('clbLaunch'),panel=$('clbPanel'),log=$('clbLog'),form=$('clbForm'),input=$('clbInput');
+  var started=false,busy=false,lastCat=null;
+  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+  function scroll(){log.scrollTop=log.scrollHeight}
+  function userMsg(t){log.appendChild(el('div','clb-msg user',t));scroll()}
+  function botMsg(build,delay,then){
+    busy=true;var d=el('div','clb-msg bot clb-typing');d.setAttribute('aria-label','Typing');d.innerHTML='<i></i><i></i><i></i>';log.appendChild(d);scroll();
+    setTimeout(function(){d.remove();var m=el('div','clb-msg bot');build(m);log.appendChild(m);busy=false;if(then)then();scroll()},delay==null?450:delay);
+  }
+  function chips(items){var w=el('div','clb-chips');items.forEach(function(it){var b=el('button','clb-chip'+(it.alt?' alt':''),it.text);b.type='button';b.addEventListener('click',function(){if(busy)return;w.querySelectorAll('button').forEach(function(x){x.disabled=true});it.fn()});w.appendChild(b)});log.appendChild(w);scroll()}
+  function catChips(){return CATS.map(function(c){return {text:ICON[c]+' '+c,fn:function(){pickCat(c,true)}}})}
+
+  /* ---------- Conversation actions ---------- */
+  function pickCat(c,echo){
+    if(echo)userMsg(c);lastCat=c;
+    var topics=T.filter(function(t){return t.cat===c});
+    botMsg(function(m){m.appendChild(el('p',null,c==='Other'?'Tell me what is happening, or pick the closest option:':'Which problem are you facing?'))},350,function(){
+      var items=topics.map(function(t){return {text:t.label,fn:function(){userMsg(t.label);answer(t)}}});
+      items.push({text:'Something else',alt:true,fn:function(){userMsg('Something else');botMsg(function(m){m.appendChild(el('p',null,'Type a short description of the problem and I will look for a temporary fix.'))},300);input.focus()}});
+      chips(items);
+    });
+  }
+  function answer(t,emergency){
+    lastCat=t.cat||lastCat;
+    botMsg(function(m){
+      if(emergency){var s=el('div','clb-sos');s.appendChild(el('strong',null,'If anyone is hurt or in danger, call 112 now.'));s.appendChild(document.createTextNode('Ambulance 108 · Fire 101 · Police 100'));m.appendChild(s);m.appendChild(el('div',null,'')).style.height='8px'}
+      m.appendChild(el('strong','clb-t',t.label+': temporary steps'));
+      var ol=el('ol');t.steps.forEach(function(s){ol.appendChild(el('li',null,s))});m.appendChild(ol);
+      if(t.note)m.appendChild(el('div','clb-note',t.note));
+      m.appendChild(el('div','clb-note','These are only stop-gap measures until the actual repair is done.'));
+    },600,function(){
+      var items=[];
+      if(t.cat){
+        items.push({text:'＋ Report this issue',fn:function(){reportIt(t.cat)}});
+        items.push({text:'See similar reports',fn:function(){seeReports(t.cat)}});
+      }
+      items.push({text:'Another problem',alt:true,fn:function(){userMsg('Another problem');menu()}});
+      chips(items);
+    });
+  }
+  function menu(){botMsg(function(m){m.appendChild(el('p',null,'Choose a category or type your problem.'))},300,function(){chips(catChips())})}
+  function fallback(){
+    botMsg(function(m){m.appendChild(el('p',null,'I could not match that to a known problem. Please pick a category below, or describe it in a few other words, like "pothole", "no water" or "streetlight off".'))},400,function(){chips(catChips())});
+  }
+  function reportIt(cat){
+    userMsg('Report this issue');
+    botMsg(function(m){m.appendChild(el('p',null,'Opening the report form with "'+cat+'" selected. Add the location and a clear photo if you can.'))},300,function(){
+      var b=$('navReport');if(b)b.click();var sel=$('category');if(sel)sel.value=cat;closePanel();
+    });
+  }
+  function seeReports(cat){
+    userMsg('See similar reports');
+    botMsg(function(m){m.appendChild(el('p',null,'Showing "'+cat+'" reports. If yours is already there, tap Support instead of posting a duplicate.'))},300,function(){
+      var f=$('categoryFilter');if(f){f.value=cat;f.dispatchEvent(new Event('change'))}
+      var r=$('reports');if(r)r.scrollIntoView({behavior:'smooth'});
+      if(window.matchMedia('(max-width:560px)').matches)closePanel();
+    });
+  }
+  function handle(text){
+    var t=text.trim();if(!t||busy)return;userMsg(t);
+    var emergency=EMERG.test(t);
+    if(HOWRE.test(t)){answerHow();return}
+    var topic=findTopic(t);
+    if(topic){answer(topic,emergency);return}
+    if(emergency){
+      botMsg(function(m){var s=el('div','clb-sos');s.appendChild(el('strong',null,'If anyone is hurt or in danger, call 112 now.'));s.appendChild(document.createTextNode('Ambulance 108 · Fire 101 · Police 100'));m.appendChild(s)},400,function(){chips(catChips())});return}
+    if(THANKS.test(t)){botMsg(function(m){m.appendChild(el('p',null,'You are welcome! Stay safe, and report the issue so the community can follow it up.'))},350,function(){chips([{text:'Another problem',alt:true,fn:function(){userMsg('Another problem');menu()}}])});return}
+    if(GREET.test(t)&&t.split(/\s+/).length<=3){botMsg(function(m){m.appendChild(el('p',null,'Hello! Tell me about the problem in your area, or pick a category.'))},350,function(){chips(catChips())});return}
+    var cat=findCat(t);
+    if(cat){pickCat(cat,false);return}
+    fallback();
+  }
+  function answerHow(){answer({label:HOW.label.replace(': temporary steps',''),steps:HOW.steps,cat:null})}
+
+  /* ---------- Open / close ---------- */
+  function start(){
+    if(started)return;started=true;
+    botMsg(function(m){m.appendChild(el('p',null,'Hi! I am the CivicLens Helper. Tell me about a local problem, like a pothole, a broken streetlight, or no water, and I will suggest safe temporary steps until it is fixed.'))},300,function(){chips(catChips())});
+  }
+  function openPanel(){panel.hidden=false;launch.setAttribute('aria-expanded','true');start();setTimeout(function(){input.focus()},50)}
+  function closePanel(){panel.hidden=true;launch.setAttribute('aria-expanded','false')}
+  launch.addEventListener('click',function(){panel.hidden?openPanel():closePanel()});
+  $('clbClose').addEventListener('click',function(){closePanel();launch.focus()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden)closePanel()});
+  form.addEventListener('submit',function(e){e.preventDefault();var v=input.value;input.value='';handle(v)});
+})();
+</script>
+<!-- ===== end CivicLens Helper ===== -->
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "civiclens-maharashtra",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Shared civic issue reporting for Maharashtra with live map and AI helper",
+  "scripts": {
+    "dev": "vercel dev",
+    "check": "node --check api/helper.js"
+  },
+  "devDependencies": {
+    "vercel": "^48.1.0"
+  }
+}
